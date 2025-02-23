@@ -1,16 +1,11 @@
-# This is a sample Python script.
+import pandas as pd
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+df = pd.read_csv("data/data.csv", encoding="latin1")  # ou "ISO-8859-1"
+print(df.head())  # Para testar se o carregamento funcionou
+
+print(df.info())  # Ver estrutura e tipos de dados
+print(df.describe())  # Estatísticas gerais das colunas numéricas
+print(df.isnull().sum())  # Verificar valores nulos
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
