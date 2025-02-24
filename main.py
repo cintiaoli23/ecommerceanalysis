@@ -1,11 +1,24 @@
 import pandas as pd
 
-df = pd.read_csv("data/data.csv", encoding="latin1")  # ou "ISO-8859-1"
-print(df.head())  # Para testar se o carregamento funcionou
+# Carregar os dados
+df = pd.read_csv("data/data.csv", encoding="latin1")
 
-print(df.info())  # Ver estrutura e tipos de dados
-print(df.describe())  # Estatísticas gerais das colunas numéricas
-print(df.isnull().sum())  # Verificar valores nulos
+# Verificar informações gerais sobre os dados
+print("📌 Informações gerais do dataset:")
+print(df.info())
+
+# Verificar a quantidade de valores nulos por coluna
+print("\n🔍 Valores nulos por coluna:")
+print(df.isnull().sum())
+
+# Verificar a quantidade de registros duplicados
+print("\n🔍 Registros duplicados no dataset:")
+print(df.duplicated().sum())
+
+
+print(df.head())  # Verifica se os dados foram carregados corretamente
+print(df.info())  # Confirma se a coluna Revenue existe
+
 
 
 
